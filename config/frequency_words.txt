@@ -155,69 +155,217 @@
 
 
 
-/比亚迪|王传福|方程豹|腾势|仰望|弗迪|刀片电池|云辇|\bBYD\b|\bDenza\b|\bYangwang\b/ => 比亚迪
+# ═════════════════════ 中国自主品牌 ═════════════════════
 
-/华为|余承东|鸿蒙智行|问界|智界|享界|尊界|ADS|\bHuawei\b/ => 华为（汽车）
+[比亚迪]
+/比亚迪.*?(王传福|方程豹|腾势|仰望|弗迪|刀片电池|云辇|DM5\.0|易三方|海豹|秦|汉|宋)/
+/\b(BYD|Denza|Yangwang)\b.*?(car|auto|vehicle|ev|phev)/i
++/(汽车|新能源|车企|车型|交付|销量|召回)/
+!电池（非车用）
+!电子代工
 
-/蔚来|李斌|乐道|萤火虫|NIO|ET5|ET7|EC6|ES6|换电|\bNIO\b/ => 蔚来
+[华为（汽车）]
+/华为.*?(余承东|鸿蒙智行|问界|智界|享界|尊界|ADS|智能汽车|HI模式)/
++/(汽车|智驾|车企|合作|发布|交付)/
+!手机
+!5G
+!基站
+!鸿蒙（非车机）
 
-/理想|李想|理想L6|理想L7|理想L8|理想L9|MEGA|增程式|双能战略|\bLi Auto\b/ => 理想
+[蔚来]
+/蔚来.*?(李斌|乐道|萤火虫|NIO|ET5|ET7|EC6|ES6|换电|Banyan|NAD)/
+/\bNIO\b.*?(car|et|ec|es|battery swap)/i
++/(汽车|用户|服务|换电站|销量)/
+!蔚来（非汽车）
 
-/小鹏|何小鹏|G6|G9|X9|P7i|MONA|AI天玑|飞行汽车|\bXPeng\b/ => 小鹏
+[理想]
+/理想.*?(李想|L6|L7|L8|L9|MEGA|增程|纯电|双能|AD Max)/
+/\b(Li Auto|Li Xiang)\b/i
++/(汽车|家庭用户|续航|交付|门店)/
+!理想（哲学）
+!理想国
 
-/小米|雷军|小米SU7|小米汽车|\bXiaomi\b/ => 小米
+[小鹏]
+/小鹏.*?(何小鹏|G6|G9|X9|P7i|MONA|AI天玑|飞行汽车|XNGP)/
+/\bXPeng\b.*?(g|p|x|mona)/i
++/(汽车|智驾|城市NGP|销量|出海)/
+!小鹏（人名）
 
-/吉利|李书福|领克|极氪|银河|几何|路特斯|沃尔沃汽车|\bGeely\b|\bZeekr\b|\bLynk & Co\b/ => 吉利
+[小米]
+/小米.*?(雷军|SU7|小米汽车|YU7|电机|电池|智能座舱)/
++/(汽车|发布会|试驾|交付|产能)/
+!手机
+!家电
+!SU7（非小米）
 
-/长安|朱华荣|深蓝|阿维塔|启源|UNI|CS系列|蓝鲸动力|iDD|\bChangan\b/ => 长安
+[吉利]
+/吉利.*?(李书福|领克|极氪|银河|几何|路特斯|沃尔沃|SEA浩瀚|雷神混动)/
+/\b(Geely|Zeekr|Lynk\s*&\s*Co|Lotus)\b.*?(car|ev|platform)/i
++/(汽车|架构|出海|并购)/
+!吉利（地名）
+!吉祥
 
-/广汽|曾庆洪|埃安|昊铂|传祺|M8|弹匣电池|\bGAC\b|\bAION\b|\bHyper\b/ => 广汽
+[长安]
+/长安.*?(朱华荣|深蓝|阿维塔|启源|UNI|CS|蓝鲸|iDD|SDA)/
++/(汽车|新能源|华为合作|销量|平台)/
+!长安（古都）
+!长治久安
 
-/长城|魏建军|哈弗|坦克|魏牌|欧拉|沙龙|Hi4|Hi4-T|\bGreat Wall\b|\bHaval\b|\bTank\b/ => 长城
+[广汽]
+/广汽.*?(曾庆洪|埃安|昊铂|传祺|M8|弹匣电池|夸克电驱)/
+/\b(GAC|AION|Hyper)\b.*?(car|ev|luxury)/i
++/(汽车|电池安全|高端化|出口)/
+!广厦
+!广州
 
-/奇瑞|尹同跃|星途|捷途|风云|鲲鹏动力|火星架构|\bChery\b/ => 奇瑞
+[长城]
+/长城.*?(魏建军|哈弗|坦克|魏牌|欧拉|沙龙|Hi4|越野|狗品类)/
+/\b(Great Wall|Haval|Tank|ORA)\b/i
++/(汽车|越野|混动|皮卡|出口)/
+!万里长城
+!长城电脑
 
-/五菱|宏光MINIEV|缤果|星光|银标|神炼电池|\bWuling\b/ => 五菱
+[奇瑞]
+/奇瑞.*?(尹同跃|星途|捷途|风云|鲲鹏动力|火星架构|iCAR)/
++/(汽车|发动机|出口|中东|俄罗斯)/
+!奇迹
+!奇怪
 
-/零跑|朱江明|C10|C11|C01|B10|LEAP|\bLeapmotor\b/ => 零跑
+[五菱]
+/五菱.*?(宏光MINIEV|缤果|星光|银标|神炼电池|人民需要)/
++/(汽车|微型车|下沉市场|销量)/
+!五菱神车（非官方）
+!五金
 
-/哪吒|张勇|L系列|GT|U|V|\bNeta\b/ => 哪吒
+[零跑]
+/零跑.*?(朱江明|C10|C11|C01|B10|LEAP|Stellantis)/
+/\bLeapmotor\b/i
++/(汽车|出海|Stellantis|交付|平台)/
+!零跑（动词）
 
-/极狐|ARCFOX|考拉|阿尔法T|S|\bArcfox\b/ => 极狐
+[哪吒]
+/哪吒.*?(汽车|合众新能源|张勇|U|V|GT|L|自燃|召回|山海平台)/
+/\bNeta\b.*?(u|v|gt|car)/i
++/(新能源|车企|车主|交付)/
+!动画
+!电影
+!哪吒2
+!敖丙
+!神话
+!COS
 
-/特斯拉|马斯克|Model 3|Model Y|Model S|Model X|Cybertruck|FSD|4680电池|\bTesla\b|\bElon Musk\b/ => 特斯拉
+[极狐]
+/极狐.*?(ARCFOX|阿尔法T|阿尔法S|考拉|T5|S5|麦格纳|北汽|激光雷达)/
+/\bARCFOX\b/i
++/(汽车|华为合作|交付|销量|测试)/
+!北极狐
+!服装
+!游戏皮肤
 
-/大众|Volkswagen|ID.系列|帕萨特|途观|MEB平台|\bVW\b/ => 大众
+# ═════════════════════ 国际主流品牌 ═════════════════════
 
-/丰田|丰田章男|卡罗拉|凯美瑞|普锐斯|bZ4X|TNGA|氢能源|\bToyota\b/ => 丰田
+[特斯拉]
+/特斯拉.*?(马斯克|Model [3Y]|Model S|Model X|Cybertruck|FSD|4680|Dojo|Robotaxi)/
+/\bTesla\b.*?(model|cybertruck|fsd|ev)/i
++/(汽车|召回|监管|自动驾驶|工厂)/
+!特斯拉（科学家）
+!线圈
 
-/本田|三部敏宏|思域|雅阁|CR-V|e:N系列|Honda Sensing|\bHonda\b/ => 本田
+[大众]
+/大众.*?(Volkswagen|ID\.系列|帕萨特|途观|MEB|SSP|奥博特)/
+/\b(VW|Volkswagen)\b.*?(id|passat|tiguan|ev)/i
++/(汽车|电动化|在华战略|合资)/
+!大众（形容词）
 
-/日产|内田诚|轩逸|奇骏|ARIYA|ProPILOT|\bNissan\b/ => 日产
+[丰田]
+/丰田.*?(丰田章男|佐藤恒治|卡罗拉|凯美瑞|普锐斯|bZ4X|TNGA|氢能源|混动)/
+/\bToyota\b.*?(corolla|camry|bz|hybrid|mirai)/i
++/(汽车|固态电池|氢能|召回)/
+!丰（丰收）
 
-/现代|起亚|E-GMP|IONIQ|EV6|K5|索纳塔|\bHyundai\b|\bKia\b/ => 现代起亚
+[本田]
+/本田.*?(三部敏宏|思域|雅阁|CR-V|e:N|Honda Sensing|VTEC)/
+/\bHonda\b.*?(civic|accord|cr-v|ev)/i
++/(汽车|电动化|中国战略|停产)/
+!本（本来）
 
-/奔驰|康林松|C级|E级|S级|EQ系列|Drive Pilot|\bMercedes-Benz\b|\bMB\b/ => 奔驰
+[日产]
+/日产.*?(内田诚|轩逸|奇骏|ARIYA|ProPILOT|VC-Turbo)/
+/\bNissan\b.*?(sylphy|ariya|x-trail)/i
++/(汽车|联盟|裁员|电动化)/
+!日（日期）
 
-/宝马|齐普策|3系|5系|X5|i系列|Neue Klasse|\bBMW\b/ => 宝马
+[现代起亚]
+/现代.*?(起亚|E-GMP|IONIQ|EV6|K5|索纳塔|捷尼赛思)/
+/\b(Hyundai|Kia|Genesis)\b.*?(ev|ioniq|k5|sonata)/i
++/(汽车|电动平台|北美|召回)/
+!现代（时间）
 
-/奥迪|杜思曼|A4|A6|Q5|e-tron|PPC平台|\bAudi\b/ => 奥迪
+[奔驰]
+/奔驰.*?(康林松|C级|E级|S级|EQ|迈巴赫|Drive Pilot|MB.OS)/
+/\b(Mercedes|Benz|MB)\b.*?(c-class|e-class|eq|s-class)/i
++/(汽车|L3|豪华|召回|芯片)/
+!奔（奔跑）
 
-/福特|吉姆·法利|F-150|Mustang Mach-E|探险者|\bFord\b/ => 福特
+[宝马]
+/宝马.*?(齐普策|3系|5系|X5|i系列|Neue Klasse|Dee)/
+/\bBMW\b.*?([357]series|x5|i[34x])/i
++/(汽车|电动化|MINI|劳斯莱斯|中国)/
+!宝（宝贝）
 
-/通用|玛丽·博拉|别克|雪佛兰|凯迪拉克|奥特能|\bGM\b|\bUltium\b/ => 通用
+[奥迪]
+/奥迪.*?(杜思曼|A4|A6|Q5|e-tron|PPC|上汽奥迪|一汽奥迪)/
+/\bAudi\b.*?(a[46]|q5|e-tron)/i
++/(汽车|电动|quattro|召回|本土化)/
+!奥（奥运）
 
-/Stellantis|标致|雪铁龙|DS|Jeep|Ram|玛莎拉蒂|阿尔法·罗密欧|\bPeugeot\b|\bCitroën\b|\bJeep\b/ => Stellantis
+[福特]
+/福特.*?(吉姆·法利|F-150|Mustang Mach-E|探险者|BlueCruise)/
+/\bFord\b.*?(f-150|mache|explorer)/i
++/(汽车|电动皮卡|在华|召回)/
+!福（祝福）
 
-/雷诺|日产联盟|Megane E-Tech|AmpR Medium|\bRenault\b/ => 雷诺
+[通用]
+/通用.*?(玛丽·博拉|别克|雪佛兰|凯迪拉克|奥特能|Ultium)/
+/\b(GM|Buick|Chevrolet|Cadillac)\b.*?(ev|ultium)/i
++/(汽车|电动平台|中国业务|裁员)/
+!通（通知）
 
-/马自达|转子|创驰蓝天|CX-50|\bMazda\b/ => 马自达
+[Stellantis]
+/Stellantis.*?(标致|雪铁龙|DS|Jeep|Ram|玛莎拉蒂|阿尔法·罗密欧)/
+/\b(Peugeot|Citroën|Jeep|Ram|Maserati)\b/i
++/(汽车|合并|电动化|召回)/
+!stellar（星星）
 
-/斯巴鲁|水平对置|EyeSight|森林人|\bSubaru\b/ => 斯巴鲁
+[雷诺]
+/雷诺.*?(日产联盟|Megane E-Tech|AmpR Medium|Alpine)/
+/\bRenault\b/i
++/(汽车|电动|退出燃油|中国)/
+!雷（雷电）
 
-/保时捷|Macan EV|Taycan|Panamera|\bPorsche\b/ => 保时捷
+[马自达]
+/马自达.*?(转子|创驰蓝天|CX-50|EZ-6|直列六缸)/
+/\bMazda\b/i
++/(汽车|操控|设计|长安合作)/
+!马（动物）
 
-/沃尔沃|吉利控股|EX90|EX30|SPA2|\bVolvo Cars\b/ => 沃尔沃
+[斯巴鲁]
+/斯巴鲁.*?(水平对置|EyeSight|森林人|傲虎|丰田持股)/
+/\bSubaru\b/i
++/(汽车|全时四驱|安全|召回)/
+!星（星座）
+
+[保时捷]
+/保时捷.*?(Macan EV|Taycan|Panamera|911|Mission X)/
+/\bPorsche\b/i
++/(汽车|电动化|豪华|召回|利润)/
+!保（保护）
+
+[沃尔沃]
+/沃尔沃.*?(吉利控股|EX90|EX30|SPA2|Pilot Assist|安全)/
+/\bVolvo Cars\b/i
++/(汽车|电动|安全技术|中国研发)/
+!沃尔沃（卡车）
 
 
 

@@ -236,7 +236,7 @@ rss:
   freshness_filter:
     enabled: true                     # 是否启用新鲜度过滤（默认启用）
 
-    max_age_days: 3                   # 最大文章年龄（天）
+    max_age_days: 1                   # 最大文章年龄（天）
                                       # - 正整数：只推送 N 天内的文章
                                       # - 0：禁用过滤，推送所有文章
 
@@ -320,7 +320,7 @@ display:
     - ai_analysis                       # 5️⃣ AI 分析区域
   regions:
     hotlist: true # 热榜区域（关键词匹配的热点新闻）
-    new_items: false # 新增热点区域（含热榜新增 + RSS 新增）
+    new_items: true # 新增热点区域（含热榜新增 + RSS 新增）
     rss: false # RSS 订阅区域
     standalone: false # 独立展示区（完整热榜/RSS，不受关键词过滤）
     ai_analysis: true # AI 分析区域
